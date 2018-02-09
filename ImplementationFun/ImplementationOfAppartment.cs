@@ -52,6 +52,7 @@ namespace ImplementationFun
 
     #endregion
 
+
     #region Bedroom
         public class Window
         {
