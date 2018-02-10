@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CallCenterProcess.cs" />
     <Compile Include="ImplementationOfAppartment.cs" />
+    <Compile Include="MusicLibrary.cs" />
     <Compile Include="PhoneConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
