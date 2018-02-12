@@ -44,6 +44,7 @@
     <Compile Include="CallCenterProcess.cs" />
     <Compile Include="ChatModel.cs" />
     <Compile Include="DakeOfCard.cs" />
+    <Compile Include="FileSystemImplementation.cs" />
     <Compile Include="ImplementationOfAppartment.cs" />
     <Compile Include="MusicLibrary.cs" />
     <Compile Include="PhoneConfiguration.cs" />
