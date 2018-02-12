@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DS.Model;
+using ImplementationFun;
 
 namespace DSFun
 {
@@ -12,16 +13,15 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            LinkedList LinkedList = new LinkedList();
-            LinkedList.AddNode(new LinkedNode { Value = 2 });
-            LinkedList.AddNode(new LinkedNode { Value = 3 });
-            LinkedList.AddNode(new LinkedNode { Value = 4 });
 
-            //LinkedList.InsertNode(1, new LinkedNode { Value = 100 });
-            //LinkedList.PrintList();
+            DakeOfCard Obj = new DakeOfCard();
 
-            //LinkedList.DeleteList();
+            Obj.Suffle();
+            Obj.DistributeAllHands();
+            Obj.PrintAllHands();
 
+
+            Console.ReadLine();
         }
     }
 }
