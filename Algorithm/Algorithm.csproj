@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44E974B1-D9E6-49BF-B428-39CF11D14FEC}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>DSFun</RootNamespace>
-    <AssemblyName>DSFun</AssemblyName>
+    <ProjectGuid>{9F36A6A7-B707-48CA-8ACA-210D56720CA1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Algorithm</RootNamespace>
+    <AssemblyName>Algorithm</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,25 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Algorithm\Algorithm.csproj">
-      <Project>{9f36a6a7-b707-48ca-8aca-210d56720ca1}</Project>
-      <Name>Algorithm</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DS\DS.csproj">
-      <Project>{7cb6e776-036b-40de-8508-59584e0e3154}</Project>
-      <Name>DS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ImplementationFun\ImplementationFun.csproj">
-      <Project>{39762289-b9a7-49e6-b83e-ee1b0f30c0c9}</Project>
-      <Name>ImplementationFun</Name>
-    </ProjectReference>
+    <Compile Include="Recursion\Recursion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

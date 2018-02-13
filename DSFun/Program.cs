@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DS.Model;
 using ImplementationFun;
+using Algorithm.Recursion;
 
 namespace DSFun
 {
@@ -14,11 +15,11 @@ namespace DSFun
         static void Main(string[] args)
         {
 
-            DakeOfCard Obj = new DakeOfCard();
+            Recursion Obj = new Recursion();
 
-            Obj.Suffle();
-            Obj.DistributeAllHands();
-            Obj.PrintAllHands();
+            String s = "sourav";
+            s = Obj.RiverseString(s);
+            Console.WriteLine(s);
 
 
             Console.ReadLine();
