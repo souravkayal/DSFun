@@ -16,10 +16,7 @@ namespace DSFun
         {
 
             Recursion Obj = new Recursion();
-
-            String s = "sourav";
-            s = Obj.RiverseString(s);
-            Console.WriteLine(s);
+            Console.Write(Obj.FindMaxValueInList(new[] {1,4,5,20,10 }));
 
 
             Console.ReadLine();

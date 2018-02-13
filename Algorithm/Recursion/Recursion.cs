@@ -85,7 +85,88 @@ namespace Algorithm.Recursion
             }
         }
 
+        public bool BinarySearch(int []Array, int Beg, int End , int Key)
+        {
+            if (Beg > End)
+                return false;
+            else
+            {
+                int mid = (Beg + End) / 2;
+                if (Array[mid] == Key)
+                    return true;
+                else if (Array[mid] > Key)
+                    End = mid;
+                else
+                    Beg = mid;
 
+                return BinarySearch(Array, Beg, End, Key);
+            }
+
+        }
+
+        public void DecimalToBinary(int Number)
+        {
+            if (Number <= 0)
+                return;
+            else
+            {
+                int r = Number % 2;
+                DecimalToBinary(Number / 2);
+                Console.Write(r + " ");
+            }
+        }
+
+        public int FindFirstPositionOfCharAtString(string Value, Char Char , int StartIndex)
+        {
+            if (StartIndex >= Value.Length -1)
+                return -1;
+            else
+            {
+                if (Value[StartIndex] == Char)
+                    return StartIndex;
+                else
+                    return FindFirstPositionOfCharAtString(Value, Char, ++StartIndex);
+            }
+        }
+
+        public int CountWordsInString(string Value , int Index = 0, int SpaceCount = 0)
+        {
+            if (Index >= Value.Length)
+                return SpaceCount;
+            else
+            {
+                if (Value[Index] == ' ')
+                    ++SpaceCount;
+
+                ++Index;
+                return CountWordsInString(Value, Index, SpaceCount);
+            }
+        }
+
+        public int SumOfNaturalNumberFromOne(int Number , int StartIndex = 0, int Sum =0)
+        {
+            if (StartIndex > Number)
+                return Sum;
+            else
+            {
+                Sum += StartIndex;
+                return SumOfNaturalNumberFromOne(Number, ++StartIndex, Sum);
+            }
+        }
+
+        public int FindMaxValueInList(int []Array, int MaxValue = Int32.MinValue , int StartIndex =0)
+        {
+            if (StartIndex >= Array.Count())
+                return MaxValue;
+            else
+            {
+                if(Array[StartIndex] > MaxValue)
+                {
+                    MaxValue = Array[StartIndex];
+                }
+                return FindMaxValueInList(Array, MaxValue, ++StartIndex);
+            }
+        }
 
     }
 }
