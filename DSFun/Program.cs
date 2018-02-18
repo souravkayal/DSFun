@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DS.Model;
 using ImplementationFun;
 using Algorithm.Recursion;
+using Algorithm.StackAlgo;
 
 namespace DSFun
 {
@@ -14,9 +15,7 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-
-            Recursion Obj = new Recursion();
-            Console.Write(Obj.FindMaxValueInList(new[] {1,4,5,20,10 }));
+            StackAlgo Obj = new StackAlgo();
 
 
             Console.ReadLine();
