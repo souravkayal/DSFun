@@ -46,6 +46,7 @@
     <Compile Include="DakeOfCard.cs" />
     <Compile Include="FileSystemImplementation.cs" />
     <Compile Include="ImplementationOfAppartment.cs" />
+    <Compile Include="MailSystem.cs" />
     <Compile Include="MusicLibrary.cs" />
     <Compile Include="PhoneConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

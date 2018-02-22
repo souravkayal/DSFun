@@ -168,7 +168,18 @@ namespace Algorithm.Recursion
             }
         }
 
+        //Given (a,b) can you reach to (c,d) if a and b can move wither (a+b, b) or (a, a+b)
+        public bool CanReachToDestination(int a, int b, int c , int d)
+        {
+            if (a > c || b > d)
+                return false;
 
+            if (a == c && b == d)
+                return true;
+            
+            return CanReachToDestination(a + b, b , c, d) || CanReachToDestination(a, a + b, c, d);
+            
+        }
 
 
     }

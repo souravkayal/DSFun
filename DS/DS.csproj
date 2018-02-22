@@ -40,13 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hashing\HashingAlgo.cs" />
     <Compile Include="LinkedList\LinkedList.cs" />
     <Compile Include="LinkedList\LinkedListRecursion.cs" />
     <Compile Include="Model\DSModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Hashing\" />
     <Folder Include="Queue\" />
     <Folder Include="Stack\" />
     <Folder Include="Tree\" />

@@ -125,7 +125,44 @@ namespace DS.LinkedListWork
             }
         }
 
-        
+        //Function to detect cycle in linked list
+        //Using List - O(n) Space complexcity
+        public bool DetectCycleInLinkedList_ExtraSpace(LinkedNode List)
+        {
+            List<LinkedNode> LookUp = new List<LinkedNode>();
+            LinkedNode tmp = List;
+            while (tmp.Next != null)
+            {
+                if (LookUp.Contains(tmp))
+                    return true;
+
+                LookUp.Add(tmp);
+                tmp = tmp.Next;
+            }
+            return false;
+        }
+
+        //Function to detect cycle in linked list
+        //Using double pointer O(n) time O(1) space
+        public bool DetectCycleInLinkedList_TwoPointer(LinkedNode Head)
+        {
+            LinkedNode ptrSlow = Head;
+            LinkedNode ptrFast = Head?.Next?.Next;
+
+            while (ptrFast != null)
+            {
+                if (ptrSlow == ptrFast) //There is cycle in list
+                    return true;
+                else
+                {
+                    ptrSlow = ptrSlow?.Next;
+                    ptrFast = ptrFast?.Next?.Next;
+                }
+            }
+            return false;
+        }
+
+
 
     }
 }

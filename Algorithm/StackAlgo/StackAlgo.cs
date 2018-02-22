@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Algorithm.StackAlgo
 {
-    //Algo to validate Expression
-    //[{(1+2) + 5}] - Valid One
+    
     public class StackAlgo
     {
+
         //Validate Expression using Stack
+        //Algo to validate Expression
+        //[{(1+2) + 5}] - Valid One
         public bool IsValidExpression(string Expression)
         {
             Stack<Char> Stk = new Stack<char>();
@@ -156,7 +158,58 @@ namespace Algorithm.StackAlgo
                 return Stk;
             }
         }
-       
+
+        //input : ab aa aa bcd ab
+        //output : 3
+        //as aa, aa destroys each other so, ab bcd ab is the new sequence
+        public string DeleteConsucutiveSameWord(string Value)
+        {
+            string[] Words = Value.Split(' ');
+            Stack<string> Stk = new Stack<string>();
+
+            foreach (var item in Words)
+            {
+
+                if(Stk.Count>0)
+                {
+                    var topWord = Stk.Peek();
+                    if (topWord == item)
+                        Stk.Pop();
+                    else
+                        Stk.Push(item);
+                }
+
+                if (Stk.Count == 0)
+                    Stk.Push(item);
+            }
+            string result = string.Empty;
+
+            while (Stk.Count>0)
+            {
+                var word = Stk.Pop();
+                result = word + result + " ";
+            }
+
+            return result;
+        }
+
+        //0! 1!!! 0!! 1! 0!! 1!!! 0! => 0 1 0 1 0 1 0
+        public string RemoveSpecialCharacterFromString(string Value)
+        {
+            Stack<Char> Stk = new Stack<char>();
+            foreach (var item in Value)
+            {
+                if (item != '!')
+                    Stk.Push(item);
+            }
+
+            string result = string.Empty;
+            while (Stk.Count >0)
+            {
+                result = Stk.Pop() + result; 
+            }
+            return result;
+        }
     }
 
     //Implement Two Stack In Array
@@ -270,8 +323,5 @@ namespace Algorithm.StackAlgo
             throw new Exception("Stack Underflow");
         }
     }
-
-
-
-
+    
 }

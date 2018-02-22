@@ -8,6 +8,8 @@ using DS.Model;
 using ImplementationFun;
 using Algorithm.Recursion;
 using Algorithm.StackAlgo;
+using DS.Hashing;
+using System.Globalization;
 
 namespace DSFun
 {
@@ -15,15 +17,16 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            StackAlgo Obj = new StackAlgo();
-            Stack<int> Stack = new Stack<int>();
-            Stack.Push(1);
-            Stack.Push(2);
-            Stack.Push(3);
+            DecessionChoice Obj = new DecessionChoice();
+            List<DecessionChoice.People> list = new List<DecessionChoice.People>();
+            list.Add(new DecessionChoice.People { Name = "John", Status = true, DateReplyed = DateTime.ParseExact("2016/01/01", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
+            list.Add(new DecessionChoice.People { Name = "John", Status = false, DateReplyed = DateTime.ParseExact("2016/01/02", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
 
-            var result = Obj.RiverseStack(Stack);
-            
-            //Console.WriteLine(Obj.EvaluationOfPrefixExpression("+19*8"));
+            list.Add(new DecessionChoice.People { Name = "Linda", Status = true, DateReplyed = DateTime.ParseExact("2016/01/01", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
+            list.Add(new DecessionChoice.People { Name = "Mark", Status = false, DateReplyed = DateTime.ParseExact("2016/01/05", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
+            list.Add(new DecessionChoice.People { Name = "Mark", Status = true, DateReplyed = DateTime.ParseExact("2016/01/06", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
+
+            Obj.ProcessResponse(list);
 
             Console.ReadLine();
         }
