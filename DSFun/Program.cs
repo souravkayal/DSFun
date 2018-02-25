@@ -10,6 +10,7 @@ using Algorithm.Recursion;
 using Algorithm.StackAlgo;
 using DS.Hashing;
 using System.Globalization;
+using Algorithm.Array;
 
 namespace DSFun
 {
@@ -17,16 +18,10 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            DecessionChoice Obj = new DecessionChoice();
-            List<DecessionChoice.People> list = new List<DecessionChoice.People>();
-            list.Add(new DecessionChoice.People { Name = "John", Status = true, DateReplyed = DateTime.ParseExact("2016/01/01", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
-            list.Add(new DecessionChoice.People { Name = "John", Status = false, DateReplyed = DateTime.ParseExact("2016/01/02", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
+            ArrayAlgo algo = new ArrayAlgo();
 
-            list.Add(new DecessionChoice.People { Name = "Linda", Status = true, DateReplyed = DateTime.ParseExact("2016/01/01", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
-            list.Add(new DecessionChoice.People { Name = "Mark", Status = false, DateReplyed = DateTime.ParseExact("2016/01/05", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
-            list.Add(new DecessionChoice.People { Name = "Mark", Status = true, DateReplyed = DateTime.ParseExact("2016/01/06", "yyyy/MM/dd", CultureInfo.InvariantCulture) });
+            Console.WriteLine(algo.FindSumOfAllElement(new int[] { 1, 4, 6, 2 }));
 
-            Obj.ProcessResponse(list);
 
             Console.ReadLine();
         }

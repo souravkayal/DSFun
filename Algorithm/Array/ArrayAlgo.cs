@@ -55,7 +55,16 @@ namespace Algorithm.Array
             return result;
         }
         
-
+        public int FindSumOfAllElement(int []Array, int Index = 0, int Sum =0)
+        {
+            if (Index == Array.Length)
+                return Sum;
+            else
+            {
+                Sum += Array[Index];
+                return FindSumOfAllElement(Array, ++Index, Sum);
+            }
+        }
        
     }
 }
