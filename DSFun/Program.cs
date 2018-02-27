@@ -19,8 +19,8 @@ namespace DSFun
         static void Main(string[] args)
         {
             ArrayAlgo algo = new ArrayAlgo();
-
-            Console.WriteLine(algo.FindSumOfAllElement(new int[] { 1, 4, 6, 2 }));
+            algo.PrintStringInPascalTriangle("Sourav");
+            
 
 
             Console.ReadLine();

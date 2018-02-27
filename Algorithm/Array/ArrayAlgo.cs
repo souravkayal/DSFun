@@ -65,6 +65,50 @@ namespace Algorithm.Array
                 return FindSumOfAllElement(Array, ++Index, Sum);
             }
         }
-       
+
+        /// <summary>
+        /// Program of Pascal Triangle
+        /// </summary>
+        /// <param name="Dim">Number of rows and columns of the triangle</param>
+        public void PascalTriangle(int Dim)
+        {
+            int[,] Array = new int[Dim, Dim];
+            for (int i = 0; i < Dim; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    if (i == j || j == 0)
+                        Array[i, j] = 1;
+                    else
+                        Array[i, j] = Array[i - 1, j - 1] + Array[i - 1, j];
+                }
+            }
+
+            //Printing of pascal triangle
+            for (int i = 0; i < Dim; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write(Array[i, j] + " ");
+                }
+                Console.WriteLine("\n");
+            }
+        }
+
+        /// <summary>
+        /// Printing of Pascal Triangle for String
+        /// </summary>
+        /// <param name="Value"></param>
+        public void PrintStringInPascalTriangle(string Value)
+        {
+            for (int i = 0; i < Value.Length; i++)
+            {
+                for (int j = 0; j <= i; j++)
+                {
+                    Console.Write(Value[j]);
+                }
+                Console.WriteLine("\n");
+            }
+        }
     }
 }
