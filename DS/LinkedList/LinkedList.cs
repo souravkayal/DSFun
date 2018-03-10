@@ -162,7 +162,35 @@ namespace DS.LinkedListWork
             return false;
         }
 
+        /// <summary>
+        /// Find Common elements of 2 linked list
+        /// </summary>
+        /// <param name="Head1">Head node of 1st linked list</param>
+        /// <param name="Head2">Head node of 2nd linked list</param>
+        /// <returns></returns>
+        public List<int> FindCommonOfTwoList(LinkedNode Head1 , LinkedNode Head2)
+        {
+            List<int> NodeList = new List<int>();
+            List<int> CommonElement = new List<int>();
 
+            LinkedNode tmp1 = Head1;
+            while (tmp1.Next != null)
+            {
+                NodeList.Add(tmp1.Value);
+                tmp1 = tmp1.Next;
+            }
+
+            tmp1 = Head2;
+            while (tmp1.Next != null)
+            {
+                if (NodeList.Contains(tmp1.Value))
+                {
+                    CommonElement.Add(tmp1.Value);
+                }
+                tmp1 = tmp1.Next;
+            }
+            return CommonElement;
+        }
 
     }
 }

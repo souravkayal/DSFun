@@ -12,7 +12,7 @@ namespace DS.Model
         public LinkedNode Next { get; set; }
         public LinkedNode Prev { get; set; }
     }
-
+    
     public class TreeNode
     {
         public int Value { get; set; }

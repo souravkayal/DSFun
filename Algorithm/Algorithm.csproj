@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Array\ArrayAlgo.cs" />
+    <Compile Include="Hashmap\HashingAlgo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueAlgo\QueueAlgo.cs" />
     <Compile Include="Recursion\Recursion.cs" />

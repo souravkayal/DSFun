@@ -210,6 +210,39 @@ namespace Algorithm.StackAlgo
             }
             return result;
         }
+
+        /// <summary>
+        /// Given input as string 3 + 4 - 7 + 3 : Output 3
+        /// </summary>
+        /// <returns>Result of the Expression</returns>
+        public int EvaludateExpression(string Expression)
+        {
+            Stack<int> Operand = new Stack<int>();
+            Stack<char> Operator = new Stack<char>();
+
+            foreach (var item in Expression)
+            {
+                if (item == '+' || item == '-')
+                    Operator.Push(item);
+                else
+                    Operand.Push((int) Char.GetNumericValue(item));
+            }
+            while (Operator.Count >0)
+            {
+                int top1 = Operand.Pop();
+                int top2 = Operand.Pop();
+
+                char op = Operator.Pop();
+                if (op == '+')
+                    Operand.Push(top1 + top2);
+                if (op == '-')
+                    Operand.Push(top1 - top2);
+            }
+            return Operand.Pop();
+        }
+
+
+
     }
 
     //Implement Two Stack In Array
@@ -324,4 +357,5 @@ namespace Algorithm.StackAlgo
         }
     }
     
+
 }

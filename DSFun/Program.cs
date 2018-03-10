@@ -11,6 +11,7 @@ using Algorithm.StackAlgo;
 using DS.Hashing;
 using System.Globalization;
 using Algorithm.Array;
+using DS.Tree;
 
 namespace DSFun
 {
@@ -18,9 +19,15 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            ArrayAlgo algo = new ArrayAlgo();
-            algo.PrintStringInPascalTriangle("Sourav");
-            
+            BinaryTree bt = new BinaryTree(new TreeNode { Value = 10 });
+            bt.AddNode(bt.Root, new TreeNode { Value = 7 });
+            bt.AddNode(bt.Root, new TreeNode { Value = 8 });
+            bt.AddNode(bt.Root, new TreeNode { Value = 4 });
+            bt.AddNode(bt.Root, new TreeNode { Value = 15 });
+
+
+            BinaryTreeAlgo btalgo = new BinaryTreeAlgo(bt);
+            btalgo.Print(bt.Root);
 
 
             Console.ReadLine();
