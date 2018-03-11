@@ -12,6 +12,7 @@ using DS.Hashing;
 using System.Globalization;
 using Algorithm.Array;
 using DS.Tree;
+using DS.Graph;
 
 namespace DSFun
 {
@@ -19,15 +20,17 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            BinaryTree bt = new BinaryTree(new TreeNode { Value = 10 });
-            bt.AddNode(bt.Root, new TreeNode { Value = 7 });
-            bt.AddNode(bt.Root, new TreeNode { Value = 8 });
-            bt.AddNode(bt.Root, new TreeNode { Value = 4 });
-            bt.AddNode(bt.Root, new TreeNode { Value = 15 });
+            GraphRepresentationUsingMatrix Obj = new GraphRepresentationUsingMatrix();
+            Dictionary<int, int[]> Array = new Dictionary<int, int[]>();
+            Array.Add(1, new[] { 2 , 3});
+            Array.Add(2, new[] { 3 });
+            Array.Add(3, new[] { 4 });
 
+            //Obj.CreateGraph(Array, 4);
+            //Obj.Print();
 
-            BinaryTreeAlgo btalgo = new BinaryTreeAlgo(bt);
-            btalgo.Print(bt.Root);
+            Obj.CreateGraph(Array);
+            Obj.PrintList();
 
 
             Console.ReadLine();
