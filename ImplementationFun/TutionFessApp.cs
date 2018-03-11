@@ -11,6 +11,7 @@ namespace ImplementationFun
         Average, Good, VeryGood, Excellent
     }
 
+
     public enum Class
     {
         X, XI, XII, Graduation, Master
