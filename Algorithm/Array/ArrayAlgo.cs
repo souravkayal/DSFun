@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Algorithm.Array
 {
+    /// <summary>
+    /// All Algo related to Array 
+    /// </summary>
     public class ArrayAlgo
     {
         /// <summary>
