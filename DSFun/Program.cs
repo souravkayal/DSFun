@@ -20,18 +20,8 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            GraphRepresentationUsingMatrix Obj = new GraphRepresentationUsingMatrix();
-            Dictionary<int, int[]> Array = new Dictionary<int, int[]>();
-            Array.Add(1, new[] { 2 , 3});
-            Array.Add(2, new[] { 3 });
-            Array.Add(3, new[] { 4 });
-
-            //Obj.CreateGraph(Array, 4);
-            //Obj.Print();
-
-            Obj.CreateGraph(Array);
-            Obj.PrintList();
-
+            ArrayAlgo Obj = new ArrayAlgo();
+            var result = Obj.SaperateOddAndEven(new int[] { 1, 2, 3, 4, 6, 8, 7, 12 });
 
             Console.ReadLine();
         }

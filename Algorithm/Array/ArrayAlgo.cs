@@ -113,5 +113,60 @@ namespace Algorithm.Array
                 Console.WriteLine("\n");
             }
         }
+
+        /// <summary>
+        /// Sort Odd and Even number in Array
+        /// {1,2,3,4,6,8,7,12} => [12, 2, 8, 4, 6, 3, 7, 1]
+        /// Bring all Even number in left and Odd number in right
+        /// </summary>
+        /// <param name="Array"></param>
+        public int[] SaperateOddAndEven(int []Array)
+        {
+            int Start = 0;
+            int End = Array.Length - 1;
+
+            while (Start < End)
+            {
+                if(Array[Start] %2 != 0 && Array[End] %2 == 0)
+                {
+                    int tmp = Array[Start];
+                    Array[Start] = Array[End];
+                    Array[End] = tmp;
+                }
+                if (Array[Start] % 2 == 0)
+                    ++Start;
+
+                if (Array[End] % 2 != 0)
+                    --End;
+            }
+            return Array;
+        }
+
+        /// <summary>
+        /// Find Two numbers in array whose sum is equal to some third number
+        /// The  ARRAY MUST BE SORTED to implement same
+        /// </summary>
+        /// <param name="Array"></param>
+        /// <returns></returns>
+        public List<KeyValuePair<int,int>> FindTwoSumInArray(int []Array , int Number)
+        {
+            int Start = 0 , End = Array.Length -1;
+            List<KeyValuePair<int, int>> Pair = new List<KeyValuePair<int, int>>();
+
+            while (Start < End)
+            {
+                int Sum = Array[Start] + Array[End];
+                if (Sum == Number)
+                    Pair.Add(new KeyValuePair<int, int>(Array[Start], Array[End]));
+
+                if (Sum > Number)
+                    --End;
+
+                if (Sum < Number)
+                    ++Start;
+            }
+            return Pair;
+        }
+
     }
 }

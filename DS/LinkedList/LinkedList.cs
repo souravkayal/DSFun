@@ -192,5 +192,22 @@ namespace DS.LinkedListWork
             return CommonElement;
         }
 
+
+        public void RiverseList()
+        {
+            LinkedNode Prev = null, Current = this.Head, Next = null;
+
+            while (Current.Next != null)
+            {
+                Next = Current.Next;
+
+                Current.Next = Prev;
+
+                Prev = Current;
+                Current = Next;
+            }
+        }
+
+
     }
 }

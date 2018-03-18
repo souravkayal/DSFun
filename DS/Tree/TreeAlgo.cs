@@ -168,6 +168,53 @@ namespace DS.Tree
             return Count;
         }
 
+
+        //TODO : 
+        //Implement algo  where next() function returns the smallest node of BST
+        //Using Stack to push all left child
+        //when call next() pop from stack and if node has right child then push all left of right node
+
+
+        #region ReturnMinimum from Stack
+        Stack<TreeNode> Stk = new Stack<TreeNode>();
+        void PrepareStack()
+        {
+            TreeNode head = Tree.Root;
+            Stk.Push(Tree.Root);
+
+            while (head.Left != null)
+            {
+                Stk.Push(head.Left);
+                head = head.Left;
+            }
+        }
+        public TreeNode FetchNextElement()
+        {
+            TreeNode item = null;
+            if (Stk.Count == 0)
+                PrepareStack();
+            else
+            {
+                item = Stk.Pop();
+
+                if (item.Right != null)
+                {
+                    var branchNode = item.Right;
+                    Stk.Push(branchNode);
+                    while (branchNode.Left != null)
+                    {
+                        Stk.Push(branchNode.Left);
+                        branchNode = branchNode.Left;
+                    }
+                }
+            }
+
+            return item;
+        }
+        #endregion
+
+
+
     }
 
 }

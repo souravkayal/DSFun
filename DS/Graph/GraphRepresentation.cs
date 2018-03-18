@@ -10,7 +10,7 @@ namespace DS.Graph
     /// Graph can be representated as adjacency matrix and adjacency list
     /// </summary>
 
-    public class GraphRepresentationUsingMatrix
+    public class GraphRepresentation
     {
         int[,] Matrix;
         int DimCount;
@@ -21,6 +21,7 @@ namespace DS.Graph
             public int Value { get; set; }
             public Node Next { get; set; }
         }
+
         void AddItem(int Index , int[] Value)
         {
             this.AdjacencyList.Add(Index, new Node { Value = Value[0] });
@@ -82,5 +83,15 @@ namespace DS.Graph
                 Console.WriteLine(" ");
             }
         }
+
+
+        //OOP Representation of Graph
+        public class Graph
+        {
+            public int Value { get; set; }
+            public List<Graph> Connections { get; set; }
+        }
+
+
     }
 }
