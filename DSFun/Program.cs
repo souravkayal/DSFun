@@ -13,6 +13,7 @@ using System.Globalization;
 using Algorithm.Array;
 using DS.Tree;
 using DS.Graph;
+using DS.LinkedList;
 
 namespace DSFun
 {
@@ -20,8 +21,16 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            ArrayAlgo Obj = new ArrayAlgo();
-            var result = Obj.SaperateOddAndEven(new int[] { 1, 2, 3, 4, 6, 8, 7, 12 });
+
+            LinkedListRecursion Obj = new LinkedListRecursion();
+            Obj.AddItem(Obj.Head, new LinkedNode { Value = 1 });
+            Obj.AddItem(Obj.Head, new LinkedNode { Value = 2 });
+            Obj.AddItem(Obj.Head, new LinkedNode { Value = 3 });
+            
+            Obj.DeleteLinkedList(ref Obj.Head);
+
+
+
 
             Console.ReadLine();
         }
