@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlockChain.cs" />
     <Compile Include="BookLibraryImplementation.cs" />
     <Compile Include="CallCenterProcess.cs" />
     <Compile Include="ChatModel.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealStateBrokerModel.cs" />
     <Compile Include="TutionFessApp.cs" />
+    <Compile Include="WifyHotspotcs.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

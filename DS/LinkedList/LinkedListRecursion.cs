@@ -130,5 +130,7 @@ namespace DS.LinkedList
             return DetectCycleInList(FirstPointer.Next, SlowPointer.Next?.Next);
         }
 
+        
+
     }
 }
