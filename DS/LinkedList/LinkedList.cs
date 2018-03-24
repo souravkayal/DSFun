@@ -192,7 +192,6 @@ namespace DS.LinkedListWork
             return CommonElement;
         }
 
-
         public void RiverseList()
         {
             LinkedNode Prev = null, Current = this.Head, Next = null;
@@ -207,7 +206,132 @@ namespace DS.LinkedListWork
                 Current = Next;
             }
         }
+        
+        public bool SearchElementInList(int Item)
+        {
+            LinkedNode Tmp = this.Head;
+            bool IsFound = false;
 
+            while (Tmp.Next != null)
+            {
+                if (Tmp.Value == Item)
+                {
+                    IsFound = true;
+                    break;
+                }
+                Tmp = Tmp.Next;
+            }
+            return IsFound;
+        }
+        
+        public LinkedNode GetNthNodeFromLast(int N)
+        {
+            LinkedNode fastPointer = this.Head;
+            LinkedNode slowPointer = this.Head;
+            int Counter = 0;
+            while (Counter < N && fastPointer.Next != null)
+            {
+                ++Counter;
+                fastPointer = fastPointer.Next;
+            }
+            if (fastPointer.Next == null)
+                throw new Exception("Invalid N");
+
+            while (fastPointer.Next != null)
+            {
+                fastPointer = fastPointer.Next;
+                slowPointer = slowPointer.Next;
+            }
+            return slowPointer;
+        }
+
+        //Function will assume that both list has same number of Nodes
+        public LinkedNode MergeTwoListAlternateNode(LinkedNode Item1, LinkedNode Item2)
+        {
+            LinkedNode resultList = new LinkedNode();
+
+            while (Item1.Next != null && Item2.Next != null)
+            {
+                //Take from List1
+                resultList.Next = new LinkedNode { Value = Item1.Value };
+                resultList = resultList.Next;
+                resultList.Next = new LinkedNode { Value = Item2.Value };
+
+                Item1 = Item1.Next;
+                Item2 = Item2.Next;
+            }
+
+            return resultList;
+        }
+
+        /// <summary>
+        /// Function to remove All occurance of certain number from list
+        /// </summary>
+        /// <param name="Value"></param>
+        public void RemoveAllOccuranceOfAnElement(int Value)
+        {
+            LinkedNode Tmp = this.Head;
+
+            while (Tmp != null && Tmp.Next != null)
+            {
+                if(Tmp.Next.Value == Value)
+                {
+                    var item = Tmp.Next;
+                    while (item != null && item.Value == Value)
+                    {
+                        item = item.Next;
+                    }
+                    Tmp.Next = item;
+                }
+
+                else
+                    Tmp = Tmp.Next;
+            }
+        }
+
+        /// <summary>
+        /// The function is to find the intersection of two lists. Hash set is used
+        /// O(n) Space and O(n) time
+        /// </summary>
+        /// <param name="List1"></param>
+        /// <param name="List2"></param>
+        /// <returns></returns>
+        public LinkedNode FindIntersectionOfTwoLists(LinkedNode List1, LinkedNode List2)
+        {
+            List<int> UniqueList = new List<int>();
+
+            while (List1.Next != null)
+            {
+                if(!UniqueList.Contains(List1.Value))
+                {
+                    UniqueList.Add(List1.Value);
+                }
+                List1 = List1.Next;
+            }
+
+            while (List2.Next != null)
+            {
+                if (!UniqueList.Contains(List2.Value))
+                {
+                    UniqueList.Add(List1.Value);
+                }
+                List2 = List2.Next;
+            }
+            var tmp = this.Head;
+
+            foreach (var item in UniqueList)
+            {
+                tmp.Next = new LinkedNode { Value = item };
+                tmp = tmp.Next;
+            }
+
+            return this.Head;
+        }
+
+        public void RemoveAlternateElementInList()
+        {
+
+        }
 
     }
 }
