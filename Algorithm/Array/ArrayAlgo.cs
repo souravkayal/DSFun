@@ -168,5 +168,89 @@ namespace Algorithm.Array
             return Pair;
         }
 
+
+        /// <summary>
+        /// Function is to return the closest value to a given number. Brute force method - O(n)
+        /// 
+        /// </summary>
+        /// <param name="Array"></param>
+        /// <returns></returns>
+        public int FindNearestElement(int []Array, int Number)
+        {
+            int SmallIndex = 0;
+            int SmallDiff =  Number - Array[0];
+
+            if (SmallDiff < 0)
+                SmallDiff = -SmallDiff;
+
+            for (int i = 1; i < Array.Length; i++)
+            {
+                var tmp =  Number - Array[i];
+                if (tmp < 0)
+                    tmp = -tmp;
+
+                if (tmp == 0)
+                {
+                    SmallIndex = i;
+                    break;
+                }
+                if (tmp < SmallDiff)
+                {
+                    SmallDiff = tmp;
+                    SmallIndex = i;
+                }
+            }
+            return Array[SmallIndex];
+        }
+
+        /// <summary>
+        /// Find nearest element from a sorted array.
+        /// </summary>
+        /// <param name="Array"></param>
+        /// <param name="Number"></param>
+        /// <returns></returns>
+        public int FindNearestElementOfSortedArray(int []Array, int Number)
+        {
+            int i, j , min = -1;
+            bool IsMatch = false;
+
+            //Checking if item is out of cover
+
+            if (Number > Array[Array.Length - 1])
+                return Array[Array.Length - 1];
+
+            if (Number < Array[0])
+                return Array[0];
+
+            for (i = 0 , j = Array.Length -1; i < Array.Length;)
+            {
+                if (Array[i] - Number == 0)
+                {
+                    min = Array[i];
+                    IsMatch = true;
+                }
+
+                else if (Array[j] - Number == 0)
+                {
+                    min = Array[j];
+                    IsMatch = true;
+                }
+
+                else if (Array[i] < Number && Array[j] > Number) {
+                    ++i; --j;
+                }
+                else
+                {
+                    min = Array[ Math.Min((Array[i] - Number) < 0 ? -(Array[i] - Number) : (Array[i] - Number), (Array[j] - Number) < 0 ? -(Array[j] - Number) : (Array[j] - Number))];
+                    IsMatch = true;
+                }
+
+                if (IsMatch)
+                    break;
+            }
+
+            return min;
+        }
+
     }
 }

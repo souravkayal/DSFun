@@ -21,7 +21,7 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            
+           
 
             Console.ReadLine();
         }
