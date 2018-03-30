@@ -46,11 +46,13 @@
     <Compile Include="ChatModel.cs" />
     <Compile Include="DakeOfCard.cs" />
     <Compile Include="EmployeeAttendenceModel.cs" />
+    <Compile Include="EmployeeHierarchy.cs" />
     <Compile Include="FileSystemImplementation.cs" />
     <Compile Include="ImplementationOfAppartment.cs" />
     <Compile Include="LRUCache.cs" />
     <Compile Include="MailSystem.cs" />
     <Compile Include="PairClass.cs" />
+    <Compile Include="PhoneCallLog.cs" />
     <Compile Include="QuestionAnswerForum.cs" />
     <Compile Include="ModelOfTaskManager.cs" />
     <Compile Include="MusicLibrary.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealStateBrokerModel.cs" />
     <Compile Include="ReturnRandomItemInConstantTime.cs" />
+    <Compile Include="StockStream.cs" />
     <Compile Include="TutionFessApp.cs" />
     <Compile Include="WifyHotspotcs.cs" />
   </ItemGroup>

@@ -328,10 +328,22 @@ namespace DS.LinkedListWork
             return this.Head;
         }
 
-        public void RemoveAlternateElementInList()
+        /// <summary>
+        /// Function to remove alternate node from linked list
+        /// </summary>
+        public LinkedList RemoveAlternateElementInList(LinkedNode Item)
         {
-
+            LinkedList list = new LinkedList();
+            while (Item != null)
+            {
+                list.AddNode(new LinkedNode { Value = Item.Value });
+                Item = Item.Next?.Next;
+            }
+            return list;
         }
+
+
+
 
     }
 }
