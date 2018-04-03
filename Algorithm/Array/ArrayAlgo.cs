@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Algorithm.Array
@@ -251,6 +252,36 @@ namespace Algorithm.Array
 
             return min;
         }
+
+
+        /// <summary>
+        /// Function is to evaluate simple Expression
+        /// </summary>
+        /// <param name="Expression">3+4-7+13</param>
+        /// <returns>13</returns>
+        public int EvaludateExpression(string Expression)
+        {
+
+            // Regex.Split(strmsg, @"(?<=[}])").Where((s, i) => s != "").ToArray();
+            //Regex.Split(input, @"([RK])")
+
+            string[] Array = Regex.Split(Expression, @"([+-])").Where((s, i) => s != "").ToArray();
+
+            int sum = Convert.ToInt32(Array[0]);
+
+            for (int i =1 ; i< Array.Length; i+=2)
+            {
+                string Exp = Array[i];
+                int value = Convert.ToInt32(Array[i+1]);
+
+                if (Exp == "+")
+                    sum = sum + value;
+                else
+                    sum = sum - value;
+            }
+            return sum;
+        }
+
 
     }
 }
