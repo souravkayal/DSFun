@@ -283,5 +283,38 @@ namespace Algorithm.Array
         }
 
 
+        public int EvaluateDigitCountInNumber(int Number, int Digit)
+        {
+            if (Number == 0 && Digit == 0)
+                return 1;
+
+            int Count = 0;
+            while (Number > 0)
+            {
+                int Remender = Number % 10;
+
+                if (Remender == Digit)
+                    ++Count;
+                Number = Number / 10;
+            }
+            return Count;
+        }
+
+        /// <summary>
+        /// Function  to return apperence of digit in array 
+        /// </summary>
+        /// <param name="Array">[0,10]</param>
+        /// <param name="Digit">0</param>
+        /// <returns>2</returns>
+        public int CountNumberOfApparence(int []Array , int Digit)
+        {
+            int Count = 0;
+            foreach (var item in Array)
+            {
+                Count += EvaluateDigitCountInNumber(item, Digit);
+            }
+            return Count;
+        }
+
     }
 }

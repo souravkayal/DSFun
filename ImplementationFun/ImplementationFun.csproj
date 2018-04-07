@@ -43,6 +43,7 @@
     <Compile Include="BlockChain.cs" />
     <Compile Include="BookLibraryImplementation.cs" />
     <Compile Include="CallCenterProcess.cs" />
+    <Compile Include="CategoryTreeImplementation.cs" />
     <Compile Include="ChatModel.cs" />
     <Compile Include="DakeOfCard.cs" />
     <Compile Include="EmployeeAttendenceModel.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="RealStateBrokerModel.cs" />
     <Compile Include="ReturnRandomItemInConstantTime.cs" />
     <Compile Include="StockStream.cs" />
+    <Compile Include="TaskSchedular.cs" />
     <Compile Include="TutionFessApp.cs" />
     <Compile Include="WifyHotspotcs.cs" />
   </ItemGroup>
