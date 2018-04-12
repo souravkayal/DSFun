@@ -316,5 +316,317 @@ namespace Algorithm.Array
             return Count;
         }
 
+
+        /// <summary>
+        /// Input : [0,1,0,0,1,0] => [0,0,0,0,1,1]
+        /// </summary>
+        /// <param name="Array"></param>
+        public int[] SaperateZeroAndOne(int []Array)
+        {
+            int i = 0, j = Array.Length - 1;
+            while (i<j)
+            {
+                if (Array[i] == 0 && Array[j] == 1)
+                {
+                    ++i;
+                    --j;
+                }
+                else if (Array[i] == 0)
+                    ++i;
+                else if (Array[j] == 1)
+                    --j;
+                else if(Array[i] == 1 && Array[j] == 0)
+                {
+                    int t = Array[i];
+                    Array[i] = Array[j];
+                    Array[j] = t;
+
+                    ++i;
+                    --j;
+                }
+            }
+            return Array;
+        }
+
+        /// <summary>
+        /// Rotate array for n number
+        /// </summary>
+        /// <param name="Array"></param>
+        public int [] ArrayRotation(int []Array , int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                int temp = Array[0];
+
+                for (int j = 1; j < Array.Length ; j++)
+                {
+                    Array[j - 1] = Array[j];
+                }
+                Array[Array.Length - 1] = temp;
+            }
+            return Array;
+        }
+
+        
+        /// <summary>
+        /// Program of binary search
+        /// </summary>
+        /// <param name="Array">Sorted Array </param>
+        /// <param name="Value">Search Element</param>
+        /// <returns></returns>
+        public bool BinarySearch(int []Array, int Value)
+        {
+            int beg = 0, end = Array.Length - 1;
+
+            while (beg <= end)
+            {
+                int mid = (beg + end) / 2;
+
+                if (Array[mid] == Value)
+                    return true;
+
+                if (Array[mid] < Value)
+                    beg = mid +1;
+                else
+                    end = mid -1;
+            }
+            return false;
+        }
+
+
+        /// <summary>
+        /// Find Rotation point of Array
+        /// </summary>
+        /// <param name="Array">[4,5,6,1,2,3]</param>
+        /// <returns>3</returns>
+        public int FindPivotPointOfArray(int []Array)
+        {
+            int last = Array.Length - 1;
+            int prelast = Array.Length - 2;
+
+            while (prelast >= 0 && Array[last] > Array[prelast] )
+            {
+                --last;
+                --prelast;
+            }
+            return last;
+        }
+
+        /// <summary>
+        /// Find Rotation Count in Rotated sorted Array
+        /// </summary>
+        /// <param name="Array">{15, 18, 2, 3, 6, 12}</param>
+        /// <returns>2</returns>
+        public int FindRottionCount(int []Array)
+        {
+            int i = 0;
+            for ( ; i < Array.Length-1 ; i++)
+            {
+                if (Array[i] > Array[i + 1])
+                    break;
+            }
+            return i ;
+        }
+
+        /// <summary>
+        /// Program to arrange negative and positive number
+        /// </summary>
+        /// <param name="Array">Input aray : [1,-4,5,6,2,-7]</param>
+        /// <returns>[-4,-7,1,5,6,2]-</returns>
+        public int[] ArrangeNegativeAndPositiveNumber(int []Array)
+        {
+            int start = 0, end = Array.Length - 1;
+            while (start < end)
+            {
+                if(Array[start] <0 && Array[end] > 0)
+                {
+                    ++start;
+                    --end;
+                }
+                else if(Array[start] >0 && Array[end] <0)
+                {
+                    int tmp = Array[start];
+                    Array[start] = Array[end];
+                    Array[end] = tmp;
+
+                    ++start;
+                    --end;
+                }
+                else if (Array[start] < 0)
+                    ++start;
+                else if (Array[end] > 0)
+                    --end;
+            }
+            return Array;
+        }
+
+
+        /// <summary>
+        /// Function to alternate array element
+        /// </summary>
+        /// <param name="Array">[1,2,3,4,5,6]</param>
+        /// <returns>[2,1,4,3,6,5]</returns>
+        public int [] AlternateArrayElement(int []Array)
+        {
+            int first = 0, second = 1;
+
+            while (second < Array.Length)
+            {
+                int tmp = Array[first];
+                Array[first] = Array[second];
+                Array[second] = tmp;
+
+                first += 2;
+                second +=2;
+            }
+            return Array;
+        }
+
+
+        /// <summary>
+        /// Sorted array is input 
+        /// </summary>
+        /// <param name="Array">{1, 2, 3, 4, 5, 6} </param>
+        /// <returns>{1,6,2,5,3,4}</returns>
+        public int [] ArrangeArrayInMinMaxValue(int []Array)
+        {
+            int start = 0, end = Array.Length - 1 , Index = 0;
+            int[] ArrayTmp = new int[Array.Length];
+
+            for (int i = 0; i < Array.Length/ 2; i++)
+            {
+                ArrayTmp[Index] = Array[start];
+                ArrayTmp[Index + 1] = Array[end];
+
+                Index += 2;
+                ++start;
+                --end;
+            }
+            return ArrayTmp;
+        }
+
+        /// <summary>
+        /// Function to replace every element of array by it's right greatest element - O(n^2)
+        /// </summary>
+        /// <param name="Array">Input array</param>
+        /// <returns>modified array</returns>
+        public int [] ReplaceEveryElementByGratestElementFromRight_n2(int []Array)
+        {
+            ///O(n^2) complexcity
+            for (int i = 0; i < Array.Length ; i++)
+            {
+                int j = i + 1;
+                if (j >= Array.Length)
+                    break;
+
+                int big = Array[j];
+                for (; j < Array.Length; j++)
+                {
+                    if (Array[j] > big)
+                        big = Array[j];
+                }
+                Array[i] = big;
+            }
+            return Array;
+        }
+
+
+        /// <summary>
+        /// Function to replace every element of array by it's right greatest element - O(n)
+        /// </summary>
+        /// <param name="Array">Input array</param>
+        /// <returns>modified array</returns>
+        public int [] ReplaceEveryElementByGratestElementFromRight_n(int []Array)
+        {
+            int big = Array[Array.Length - 1];
+            for (int i = Array.Length -2; i >= 0; i--)
+            {
+                int current = Array[i];
+
+                int k = i + 1;
+                if (Array[k] > big)
+                    big = Array[k];
+
+                Array[i] = big;
+                if (current > big)
+                    big = current;
+            }
+
+            return Array;
+        }
+
+        //Suffle array by equal probablity distribution
+
+
+        /// <summary>
+        /// https://www.geeksforgeeks.org/constant-time-range-add-operation-array/
+        /// </summary>
+        /// <param name="Array"></param>
+        /// <returns></returns>
+        public int [] ConstantTimeRangeAddOperation(int []Array , List<Tuple<int,int,int>> Ranges)
+        {
+            for (int i = 0; i <Ranges.Count; i++)
+            {
+                //int Start = Ranges[i].Item1;
+                //int End = Ranges[i].Item2;
+                for (int j = Ranges[i].Item1; j < Ranges[i].Item2; j++)
+                {
+                    Array[j] += Ranges[i].Item3;
+                }
+            }
+
+            return Array;
+        }
+        
+        
+        /// <summary>
+        /// Mountain will form , if array comes first increasing and then decreasing Order
+        /// </summary>
+        /// <param name="Array">[1,3,5,6,5,3,2]</param>
+        /// <returns>true</returns>
+        public bool FindWhetherArrayFormedMountain(int []Array)
+        {
+            //find pivot point
+            //check left elements in pivot point
+            //check right elements in pivot point
+            int pivot = 0;
+
+            for (int i = 0; i < Array.Length -2; i++)
+            {
+                if (Array[i] > Array[i + 1])
+                {
+                    pivot = i; 
+                    break;
+                }
+            }
+            //check left side of pivot 
+            
+            for (int i = 0; i < pivot-1; i++)
+            {
+                if (Array[i] > Array[i + 1])
+                    return false;
+            }
+            //check right side of pivot
+
+            for (int i = pivot +1; i < Array.Length -1; i++)
+            {
+                if (Array[i] < Array[i + 1])
+                    return false;
+            }
+            return true;
+        }
+
+
+        /// <summary>
+        /// Check whether binary representation of decimal is odd or even number.
+        /// When there is 1 in right most digit it's odd number otherwise even number
+        /// </summary>
+        /// <param name="Array"></param>
+        /// <returns></returns>
+        public string CheckBinaryArrayForOddOrEvenInDecimal(int []Array)
+        {
+            return Array[Array.Length - 1] == 1 ? "Odd" : "Even";
+        }
+
     }
 }

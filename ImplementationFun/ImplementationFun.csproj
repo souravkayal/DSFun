@@ -63,6 +63,7 @@
     <Compile Include="ReturnRandomItemInConstantTime.cs" />
     <Compile Include="StockStream.cs" />
     <Compile Include="TaskSchedular.cs" />
+    <Compile Include="TransactionImplementation.cs" />
     <Compile Include="TutionFessApp.cs" />
     <Compile Include="WifyHotspotcs.cs" />
   </ItemGroup>

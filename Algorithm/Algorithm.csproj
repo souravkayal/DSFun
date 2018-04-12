@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Array\2DArray.cs" />
     <Compile Include="Array\ArrayAlgo.cs" />
     <Compile Include="Hashmap\HashingAlgo.cs" />
     <Compile Include="Math\Clock.cs" />
