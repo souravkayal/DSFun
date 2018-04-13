@@ -23,9 +23,8 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            ArrayAlgo Obj = new ArrayAlgo();
-            var result = Obj.FindWhetherArrayFormedMountain(new[] { 2, 4, 1, 6, 3, 2 });
-
+            TwoDArray Obj = new TwoDArray();
+            Obj.PrintPascalTriangle(5);
 
             Console.ReadLine();
         }
