@@ -48,6 +48,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueAlgo\QueueAlgo.cs" />
     <Compile Include="Recursion\Recursion.cs" />
+    <Compile Include="Searching\SearchAlgo.cs" />
+    <Compile Include="Sorting\BucketSort.cs" />
     <Compile Include="StackAlgo\StackAlgo.cs" />
   </ItemGroup>
   <ItemGroup />
