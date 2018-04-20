@@ -24,10 +24,10 @@ namespace DSFun
     {
         static void Main(string[] args)
         {
-            SearchAlgo Obj = new SearchAlgo();
+            //Binary Tree from inOrder and Preorder traversal
 
-            var result = Obj.BinarySearch(new[] {1,3,5,7,9,10 }, 25);
 
+            
             Console.ReadLine();
         }
     }

@@ -149,6 +149,10 @@ namespace DS.Tree
             
         }
 
+        /// <summary>
+        /// Program to count number of nodes in tree
+        /// </summary>
+        /// <returns></returns>
         public int CountNodesOfTree()
         {
             Queue<TreeNode> Q = new Queue<TreeNode>();
@@ -167,6 +171,36 @@ namespace DS.Tree
             }
             return Count;
         }
+
+
+        public void PrintLevelByLevel()
+        {
+            Queue<TreeNode> Q = new Queue<TreeNode>();
+            Q.Enqueue(Tree.Root);
+
+            while (true)
+            {
+                int Count = Q.Count;
+
+                if (Count == 0)
+                    break;
+                while (Count > 0)
+                {
+                    var item = Q.Dequeue();
+                    Console.Write(item.Value);
+
+                    if (item.Left != null)
+                        Q.Enqueue(item.Left);
+
+                    if (item.Right != null)
+                        Q.Enqueue(item.Right);
+
+                    --Count;
+                }
+                Console.WriteLine("\n");
+            }
+        }
+
 
 
         //TODO : 

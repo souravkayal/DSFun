@@ -61,6 +61,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RealStateBrokerModel.cs" />
     <Compile Include="ReturnRandomItemInConstantTime.cs" />
+    <Compile Include="ScientistAndBlackHole.cs" />
     <Compile Include="StockStream.cs" />
     <Compile Include="TaskSchedular.cs" />
     <Compile Include="TransactionImplementation.cs" />
