@@ -47,11 +47,11 @@
     <Compile Include="LinkedList\LinkedListRecursion.cs" />
     <Compile Include="Model\DSModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stack\Stack.cs" />
     <Compile Include="Tree\TreeAlgo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Queue\" />
-    <Folder Include="Stack\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

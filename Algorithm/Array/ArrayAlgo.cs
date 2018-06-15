@@ -628,5 +628,28 @@ namespace Algorithm.Array
             return Array[Array.Length - 1] == 1 ? "Odd" : "Even";
         }
 
+
+        /// <summary>
+        /// Suffle an input array and print it.
+        /// </summary>
+        /// <param name="Array"></param>
+        public void SuffleTheInputArray(int []Array)
+        {
+            for (int i = 0; i < Array.Length; i++)
+            {
+                int Rand = new Random().Next(0, 100) % (Array.Length - i);
+
+                int tmp = Array[i];
+                Array[i] = Array[Rand];
+                Array[Rand] = tmp;
+            }
+
+            foreach (var item in Array)
+            {
+                Console.Write(item + " ");
+            }
+        }
+
+
     }
 }

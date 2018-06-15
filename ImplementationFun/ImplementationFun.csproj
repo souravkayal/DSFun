@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,8 +47,17 @@
     <Compile Include="CategoryTreeImplementation.cs" />
     <Compile Include="ChatModel.cs" />
     <Compile Include="DakeOfCard.cs" />
+    <Compile Include="DesignPattern\Composit.cs" />
+    <Compile Include="DesignPattern\DI.cs" />
+    <Compile Include="DesignPattern\Factory.cs" />
+    <Compile Include="DesignPattern\FlyWeight.cs" />
+    <Compile Include="DesignPattern\ObserverPattern.cs" />
+    <Compile Include="DesignPattern\PrototypePattern.cs" />
+    <Compile Include="DesignPattern\Proxy.cs" />
+    <Compile Include="DesignPattern\Singleton.cs" />
     <Compile Include="EmployeeAttendenceModel.cs" />
     <Compile Include="EmployeeHierarchy.cs" />
+    <Compile Include="eWaletModel.cs" />
     <Compile Include="FileSystemImplementation.cs" />
     <Compile Include="ImplementationOfAppartment.cs" />
     <Compile Include="LRUCache.cs" />
@@ -62,6 +72,7 @@
     <Compile Include="RealStateBrokerModel.cs" />
     <Compile Include="ReturnRandomItemInConstantTime.cs" />
     <Compile Include="ScientistAndBlackHole.cs" />
+    <Compile Include="SnakeAndLadder.cs" />
     <Compile Include="StockStream.cs" />
     <Compile Include="TaskSchedular.cs" />
     <Compile Include="TransactionImplementation.cs" />

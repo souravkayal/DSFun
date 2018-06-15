@@ -68,7 +68,7 @@ namespace DS.Tree
         }
     }
 
-    public class BinaryTreeAlgo 
+    public class BinaryTreeAlgo  
     {
         public BinaryTree Tree { get; set; }
         public BinaryTreeAlgo(BinaryTree Tree)
@@ -172,7 +172,9 @@ namespace DS.Tree
             return Count;
         }
 
-
+        /// <summary>
+        /// Program to print binary tree level by level
+        /// </summary>
         public void PrintLevelByLevel()
         {
             Queue<TreeNode> Q = new Queue<TreeNode>();
@@ -200,6 +202,117 @@ namespace DS.Tree
                 Console.WriteLine("\n");
             }
         }
+        
+
+        /// <summary>
+        /// Program to print level order traversal in spiral form
+        /// </summary>
+        /// <param name="Root"></param>
+        public void PrintLevelByLevelInSpiralForm(TreeNode Root)
+        {
+            Stack<TreeNode> Stk1 = new Stack<TreeNode>();
+            Stack<TreeNode> Stk2 = new Stack<TreeNode>();
+
+            Stk1.Push(Root);
+
+            while (Stk1.Count> 0 || Stk2.Count > 0)
+            {
+                while (Stk1.Count >0)
+                {
+                    var item = Stk1.Pop();
+                    Console.Write(item.Value + " ");
+
+                    if (item.Right != null)
+                        Stk2.Push(item.Right);
+
+                    if (item.Left != null)
+                        Stk2.Push(item.Left);
+                }
+
+                while (Stk2.Count > 0)
+                {
+                    var item = Stk2.Pop();
+                    Console.Write(item.Value + " ");
+
+                    if (item.Left != null)
+                        Stk1.Push(item.Left);
+
+                    if (item.Right != null)
+                        Stk1.Push(item.Right);
+                }
+
+                Console.WriteLine();
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// Program to find the depth of Binary Tree
+        /// </summary>
+        /// <param name="Root"></param>
+        /// <returns></returns>
+        public int FindDepthOfTree(TreeNode Root)
+        {
+            if (Root == null)
+                return 0;
+            else
+                return Math.Max(FindDepthOfTree(Root.Left), FindDepthOfTree(Root.Right)) +1;
+        }
+
+
+        /// <summary>
+        /// Pre order traversal using iterative method
+        /// </summary>
+        /// <param name="Root"></param>
+        public void PreOrderTraversal_Iterative(TreeNode Root)
+        {
+            Stack<TreeNode> Stk = new Stack<TreeNode>();
+            Stk.Push(Root);
+
+            while (Stk.Count > 0)
+            {
+                var item = Stk.Pop();
+                Console.WriteLine(item.Value);
+
+                if (item.Right != null)
+                    Stk.Push(item.Right);
+
+                if (item.Left != null)
+                    Stk.Push(item.Left);
+            }
+        }
+
+
+        /// <summary>
+        /// Inorder traversal 
+        /// </summary>
+        /// <param name="Root"></param>
+        public void InOrderTraversal_Iterative(TreeNode Root)
+        {
+           
+        }
+
+
+        /// <summary>
+        /// Print all leaf node in Binary Tree
+        /// </summary>
+        /// <param name="Root"></param>
+        public void PrintAllLeafNode_Recursion(TreeNode Root)
+        {
+            if (Root == null)
+                return;
+            else
+            {
+                if (Root.Left == null && Root.Right == null)
+                    Console.WriteLine(Root.Value);
+
+                PrintAllLeafNode_Recursion(Root.Left);
+                PrintAllLeafNode_Recursion(Root.Right);
+            }
+        }
+
 
 
 
